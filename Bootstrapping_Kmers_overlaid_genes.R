@@ -21,10 +21,10 @@ bootstrapping_kmer_over_genes_100 <- function(df) {
   df_out_B <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_animal_favourable_bd(gene_btsp.B) %>% dplyr::mutate(group = "B")
   
   gene_btsp.C <- dplyr::filter(gene_btsp, group == "C")
-  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.B) %>% dplyr::mutate(group = "C")
+  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.C) %>% dplyr::mutate(group = "C")
   
   gene_btsp.D <- dplyr::filter(gene_btsp, group == "D")
-  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.C) %>% dplyr::mutate(group = "D")
+  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.D) %>% dplyr::mutate(group = "D")
   
   df_out <- dplyr::bind_rows(df_out_A, df_out_B, df_out_C, df_out_D) 
   df_out <- replace(df_out, is.na(df_out), 0)
@@ -42,10 +42,10 @@ bootstrapping_kmer_over_genes_500 <- function(df) {
   df_out_B <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_animal_favourable_bd(gene_btsp.B) %>% dplyr::mutate(group = "B")
   
   gene_btsp.C <- dplyr::filter(gene_btsp, group == "C")
-  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.B) %>% dplyr::mutate(group = "C")
+  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.C) %>% dplyr::mutate(group = "C")
   
   gene_btsp.D <- dplyr::filter(gene_btsp, group == "D")
-  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.C) %>% dplyr::mutate(group = "D")
+  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.D) %>% dplyr::mutate(group = "D")
   
   df_out <- dplyr::bind_rows(df_out_A, df_out_B, df_out_C, df_out_D) 
   df_out <- replace(df_out, is.na(df_out), 0)
@@ -63,10 +63,10 @@ bootstrapping_kmer_over_genes_1000 <- function(df) {
   df_out_B <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_animal_favourable_bd(gene_btsp.B) %>% dplyr::mutate(group = "B")
   
   gene_btsp.C <- dplyr::filter(gene_btsp, group == "C")
-  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.B) %>% dplyr::mutate(group = "C")
+  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.C) %>% dplyr::mutate(group = "C")
   
   gene_btsp.D <- dplyr::filter(gene_btsp, group == "D")
-  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.C) %>% dplyr::mutate(group = "D")
+  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.D) %>% dplyr::mutate(group = "D")
   
   df_out <- dplyr::bind_rows(df_out_A, df_out_B, df_out_C, df_out_D) 
   df_out <- replace(df_out, is.na(df_out), 0)
@@ -84,10 +84,10 @@ bootstrapping_kmer_over_genes_5000 <- function(df) {
   df_out_B <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_animal_favourable_bd(gene_btsp.B) %>% dplyr::mutate(group = "B")
   
   gene_btsp.C <- dplyr::filter(gene_btsp, group == "C")
-  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.B) %>% dplyr::mutate(group = "C")
+  df_out_C <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_enriched_bd(gene_btsp.D) %>% dplyr::mutate(group = "C")
   
   gene_btsp.D <- dplyr::filter(gene_btsp, group == "D")
-  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.C) %>% dplyr::mutate(group = "D")
+  df_out_D <- calculate_proportion_kmers_over_coronavirus_genome_pc_wszystko_normalization_human_favourable_bd(gene_btsp.D) %>% dplyr::mutate(group = "D")
   
   df_out <- dplyr::bind_rows(df_out_A, df_out_B, df_out_C, df_out_D) 
   df_out <- replace(df_out, is.na(df_out), 0)
@@ -95,7 +95,7 @@ bootstrapping_kmer_over_genes_5000 <- function(df) {
   return(df_out)
 }
 
-bootstrap_deer_breakdown_100 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_100(df_matrix_wszystko_deer_breakdown), simplify = F))
-bootstrap_deer_breakdown_500 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_500(df_matrix_wszystko_deer_breakdown), simplify = F))
-bootstrap_bat_breakdown_1000 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_1000(df_matrix_wszystko_bat_breakdown), simplify = F))
-bootstrap_bat_breakdown_5000 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_5000(df_matrix_wszystko_bat_breakdown), simplify = F))
+bootstrap_deer_breakdown_100 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_100(df_matrix_wszystko_deer_breakdown_pc), simplify = F))
+bootstrap_deer_breakdown_500 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_500(df_matrix_wszystko_deer_breakdown_pc), simplify = F))
+bootstrap_bat_breakdown_1000 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_1000(df_matrix_wszystko_bat_breakdown_pc), simplify = F))
+bootstrap_bat_breakdown_5000 <- do.call(rbind, replicate(5000, bootstrapping_kmer_over_genes_5000(df_matrix_wszystko_bat_breakdown_pc), simplify = F))
