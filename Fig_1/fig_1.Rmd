@@ -7,37 +7,3 @@ output: multiple formats of the results
 
 ### Of note, the code for the calculation of enriched k-mers and analytical pipelines, including plotting related to Figure 1A, 1B, 1C, 1D, 1E, and 1F are documented in [notebooks](https://github.com/wis-janusz/PORT-EK/tree/main/notebooks) archived in [GitHub PORT-EK](https://github.com/wis-janusz/PORT-EK).
 
-# Figures 1E and 1F
-```{r K-mers count order}
-# deers
-
-subsets_d <- c(rep("common", 4), rep("enriched", 2), rep("unique", 2))
-count_d <- c(7154, 8993, 10379, 15420, 146, 1324, 548, 458)
-cat_d <- c("deer_over_rep", "humans_over_rep", "fail_to_pass", "non_sig", "deer_over_rep", "humans_over_rep", "deer_over_rep", "humans_over_rep")
-
-df_count_order_d <- data.frame(subsets_d, count_d, cat_d)
-
-#ggplot(df_count_order_d, aes(area = "count_d", fill = "cat_d", label = "subsets_d", subgroup = "cat_d"))+geom_treemap(stat = "identity")
-
-svg("/Users/hchen/Documents/Praca/Projekten/Moi/SARS/Cross_species_tansmission/Abbildungen/kmers_titering/treemap_deers.svg", height = 4, width = 4)
-treemap(dtf = df_count_order_d,
-        index = c("cat_d", "subsets_d"),
-        vSize = "count_d",
-        vColor = "cat_d")
-dev.off()
-
-# bats
-
-subsets_b <- c(rep("common", 2), rep("enriched", 2), rep("unique", 2))
-count_b <- c(2744, 29822, 2984, 29933, 29, 2676)
-cat_b <- rep(c("bats_over_rep", "humans_over_rep"), 3) 
-
-df_count_order_b <- data.frame(subsets_b, count_b, cat_b)
-
-svg("/Users/hchen/Documents/Praca/Projekten/Moi/SARS/Cross_species_tansmission/Abbildungen/kmers_titering/treemap_bats.svg", height = 4, width = 4)
-treemap(dtf = df_count_order_b,
-        index = c("cat_b", "subsets_b"),
-        vSize = "count_b",
-        vColor = "cat_b")
-dev.off()
-```
