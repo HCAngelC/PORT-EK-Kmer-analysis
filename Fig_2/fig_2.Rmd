@@ -1,0 +1,8 @@
+---
+title: "Figure 1. Identification of enriched k-mers and landscapes of enriched k-mers across the SARS-CoV-2 genome."
+author: "Janusz Wiśniewski and Heng-Chang Chen"
+date: "2025/04/11"
+output: multiple formats of the results
+---
+
+### Of note, the code for the calculation of enriched k-mers and analytical pipelines, including plotting related to Figure 1A, 1B, 1C, 1D, 1E, and 1F are documented in [notebooks](https://github.com/wis-janusz/PORT-EK/tree/main/notebooks) archived in [GitHub PORT-EK](https://github.com/wis-janusz/PORT-EK).
