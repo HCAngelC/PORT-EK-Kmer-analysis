@@ -1,1 +1,1 @@
-Of note, the code and analytical pipelines, including plotting related to Figure 1A, 1B, 1C, 1D, 1E, and 1F are documented in [notebooks](https://github.com/wis-janusz/PORT-EK/tree/main/notebooks) curated ub [GitHub PORT-EK] (https://github.com/wis-janusz/PORT-EK).
+Of note, the code and analytical pipelines, including plotting related to Figure 1A, 1B, 1C, 1D, 1E, and 1F are documented in [notebooks](https://github.com/wis-janusz/PORT-EK/tree/main/notebooks) curated ub [GitHub PORT-EK](https://github.com/wis-janusz/PORT-EK).
